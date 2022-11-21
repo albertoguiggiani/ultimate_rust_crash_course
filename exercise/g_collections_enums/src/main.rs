@@ -47,6 +47,7 @@ fn main() {
     //      - Between 1.0 and 5.0 -- `Shot::Hit(value)`
     //      - Greater than 5.0 -- `Shot::Miss`
     for coord in arrow_coords {
+        coord.print_description();
         shots.push(match coord.distance_from_center() {
             x if x < 1.0 => Shot::Bullseye,
             x if x < 5.0 => Shot::Hit(x),
